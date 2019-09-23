@@ -2,7 +2,7 @@ from selenium.webdriver import Remote as RemoteWebDriver
 from selenium.common.exceptions import NoSuchElementException
 
 
-class BasePage():
+class BasePage:
     def __init__(self, browser: RemoteWebDriver, url, timeout=10):
         self.browser = browser
         self.url = url
