@@ -41,7 +41,7 @@ class ProductPage(BasePage):
             "Description product is not present in basket"
 
     def check_correct_price_in_basket(self, price):
-        assert self.price == price
+        assert self.price == price, "Price in basket is not equal price in product page"
 
     def check_correct_description_in_basket(self, description):
-        assert self.description == description
+        assert self.description == description, "Description in basket is not equal description in product page"
