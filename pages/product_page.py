@@ -45,3 +45,11 @@ class ProductPage(BasePage):
 
     def check_correct_description_in_basket(self, description):
         assert self.description == description, "Description in basket is not equal description in product page"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.DESCRIPTION_PRODUCT_IN_BASKET), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_success_message_after_add_in_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.DESCRIPTION_PRODUCT_IN_BASKET), \
+            "Success message is presented and not disappeared, but should not be"
