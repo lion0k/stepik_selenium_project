@@ -4,6 +4,12 @@ from selenium.webdriver.common.by import By
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_PAGE_LINK = (By.CSS_SELECTOR, 'div.basket-mini > span.btn-group a')
+
+
+class BasketPageLocators:
+    EMPTY_BASKET = (By.CSS_SELECTOR, '#content_inner > p > a')
+    NOT_EMPTY_BASKET = (By.CSS_SELECTOR, '#basket_formset')
 
 
 class LoginPageLocators:
