@@ -5,12 +5,11 @@ from .locators import BasePageLocators
 
 class LoginPage(BasePage):
     def register_new_user(self, email: str, password: str) -> None:
-        page = BasePage(self.browser, self.url)
-        assert page.send(*LoginPageLocators.EMAIL_FIELD, email) is None, 'Not found or exist field email'
-        assert page.send(*LoginPageLocators.PASSWORD_FIELD, password) is None, 'Not found or exist field password'
-        assert page.send(*LoginPageLocators.CONFORM_PASSWORD_FIELD, password) is None, 'Not found or exist field\
+        assert self.send(*LoginPageLocators.EMAIL_FIELD, email) is None, 'Not found or exist field email'
+        assert self.send(*LoginPageLocators.PASSWORD_FIELD, password) is None, 'Not found or exist field password'
+        assert self.send(*LoginPageLocators.CONFORM_PASSWORD_FIELD, password) is None, 'Not found or exist field\
          conform password'
-        assert page.click(*LoginPageLocators.BUTTON_REGISTRATION_SUBMIT) is None, 'Not found or exist button \
+        assert self.click(*LoginPageLocators.BUTTON_REGISTRATION_SUBMIT) is None, 'Not found or exist button \
         submit registration'
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User is not login in"
 
