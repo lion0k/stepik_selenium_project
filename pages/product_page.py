@@ -6,6 +6,12 @@ class ProductPage(BasePage):
     price: str
     description: str
 
+    def get_price_from_product_page(self):
+        return self.get_text(*ProductPageLocators.PRICE_PRODUCT)
+
+    def get_description_from_product_page(self):
+        return self.get_text(*ProductPageLocators.DESCRIPTION_PRODUCT)
+
     def should_be_before_add_in_basket(self):
         self.should_be_button_add_basket()
         self.should_be_price_product()
