@@ -1,6 +1,5 @@
 import pytest
 from .pages.product_page import ProductPage
-from .pages.locators import ProductPageLocators
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 import faker
@@ -104,6 +103,6 @@ def test_guest_can_add_product_to_basket(browser):
     page.should_be_before_add_in_basket()
     page.add_product_in_basket()
     page.solve_quiz_and_get_code()
-    description_in_basket = page.get_text(*ProductPageLocators.DESCRIPTION_PRODUCT_IN_BASKET)
-    price_in_basket = page.get_text(*ProductPageLocators.PRICE_PRODUCT_IN_BASKET)
+    description_in_basket = page.get_description_from_product_page()
+    price_in_basket = page.get_price_from_product_page()
     page.should_be_after_add_in_basket(price_in_basket, description_in_basket)
